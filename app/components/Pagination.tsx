@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, itemCount, pageSize }: Props) => {
   const pageCount = Math.ceil(itemCount / pageSize);
 
   const changePage = (page: number) => {
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(searchParams);
     params.set('page', page.toString());
     router.push('?' + params.toString());
   };
@@ -31,7 +31,7 @@ const Pagination = ({ currentPage, itemCount, pageSize }: Props) => {
   if (pageCount <= 1) return null;
 
   return (
-    <Flex align="center" gap="2">
+    <Flex align="center" gap="2" mt="3">
       <Text size="2">
         Page {currentPage} of {pageCount}
       </Text>
