@@ -3,12 +3,16 @@ import { Card, Flex, Text } from '@radix-ui/themes';
 import Link from 'next/link';
 
 export interface IssueStatusProps {
-  open: number;
-  inProgress: number;
-  closed: number;
+  statusValues: {
+    open: number;
+    inProgress: number;
+    closed: number;
+  };
 }
 
-const IssueSummary = ({ open, inProgress, closed }: IssueStatusProps) => {
+const IssueSummary = ({
+  statusValues: { open, inProgress, closed },
+}: IssueStatusProps) => {
   const containers: {
     label: string;
     value: number;

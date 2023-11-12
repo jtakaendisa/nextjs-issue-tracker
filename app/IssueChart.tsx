@@ -4,7 +4,9 @@ import { Card } from '@radix-ui/themes';
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { IssueStatusProps } from './IssueSummary';
 
-const IssueChart = ({ open, inProgress, closed }: IssueStatusProps) => {
+const IssueChart = ({
+  statusValues: { open, inProgress, closed },
+}: IssueStatusProps) => {
   const data = [
     { label: 'Open', value: open },
     { label: 'In Progress', value: inProgress },
